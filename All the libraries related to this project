@@ -1,0 +1,13 @@
+# Install libraries (only needed once in Colab)
+!pip install numpy pandas matplotlib seaborn scikit-learn geopandas folium
+
+# Import libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import folium
+from folium.plugins import HeatMap
