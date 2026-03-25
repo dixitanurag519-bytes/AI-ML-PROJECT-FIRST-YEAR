@@ -1,0 +1,19 @@
+# Simulate dataset: animal GPS movement + environment + traffic
+np.random.seed(42)
+n_samples = 500
+
+data = pd.DataFrame({
+    'latitude': np.random.uniform(26.0, 27.0, n_samples),
+    'longitude': np.random.uniform(90.0, 91.0, n_samples),
+    'animal_speed': np.random.uniform(0.5, 15.0, n_samples),
+    'traffic_density': np.random.uniform(0, 1, n_samples),
+    'vegetation_density': np.random.uniform(0.2, 0.9, n_samples),
+    'time_of_day': np.random.choice(['day', 'night'], n_samples)
+})
+
+# Define labels: 1 = safe crossing, 0 = unsafe
+data['safe_crossing'] = ((data['animal_speed'] < 10) &
+                         (data['traffic_density'] < 0.5) &
+                         (data['vegetation_density'] > 0.4)).astype(int)
+
+data.head()
