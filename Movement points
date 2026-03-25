@@ -1,0 +1,20 @@
+Plot animal movement points
+plt.figure(figsize=(6,6))
+plt.scatter(data['longitude'], data['latitude'],
+            c=data['safe_crossing'], cmap='coolwarm', alpha=0.7)
+plt.xlabel("Longitude")
+plt.ylabel("Latitude")
+plt.title("Simulated Animal Movement & Safety Status")
+plt.show()
+
+
+
+# Convert categorical feature
+data = pd.get_dummies(data, columns=['time_of_day'], drop_first=True)
+
+# Separate features and label
+X = data.drop('safe_crossing', axis=1)
+y = data['safe_crossing']
+
+# Split into train-test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
