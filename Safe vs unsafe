@@ -1,0 +1,30 @@
+# Predict safe zones for entire dataset
+data['predicted_safety'] = model.predict(X)
+
+# Display map with predicted safe crossings (green) and unsafe (red)
+m2 = folium.Map(location=[26.5, 90.5], zoom_start=8)
+for _, row in data.iterrows():
+    color = 'green' if row['predicted_safety'] == 1 else 'red'
+    folium.CircleMarker(
+        location=[row['latitude'], row['longitude']],
+        radius=4,
+        color=color,
+        fill=True,
+        fill_opacity=0.7
+    ).add_to(m2)
+
+m2
+
+
+
+
+Use Random Forest to predict safe vs unsafe zones
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Predictions
+y_pred = model.predict(X_test)
+
+# Evaluate
+print("Model Accuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred))
