@@ -6,12 +6,17 @@ The rapid expansion of urban areas, highways, and industrial zones has led to se
 
 The model uses Random Forest Classification along with simulated animal movement data, sensor inputs, and drone imagery to improve habitat connectivity and support sustainable conservation planning.
 
+
+    
 🎯 Objectives
 Predict safe and unsafe wildlife crossing zones
 Reduce human–animal conflict and road accidents
 Improve habitat connectivity using AI
 Provide data-driven insights for policymakers
 Integrate modern technology with ecological conservation
+
+
+
 🧠 Technologies Used
 Python
 Machine Learning (Scikit-learn - Random Forest)
@@ -20,6 +25,9 @@ Matplotlib / Seaborn (Visualization)
 Google Colab / Jupyter Notebook
 GIS Tools (QGIS / Google Earth Engine)
 Drone Imagery & Sensor Data (Simulated)
+
+
+
 ⚙️ Methodology
 Data Collection
 Simulated animal movement data
@@ -38,6 +46,9 @@ Helps in identifying high-risk areas
 Visualization
 Graphs and maps for better understanding
 Risk zone highlighting
+
+
+
 📊 Features
 AI-based prediction system
 Real-time adaptable framework (conceptual)
@@ -60,10 +71,15 @@ Open in Google Colab or Jupyter Notebook
 Install required libraries:
 pip install pandas numpy scikit-learn matplotlib
 Run the notebook or script
+
+
 📈 Results
 Successfully classified safe and unsafe crossing zones
 Demonstrated how AI can reduce wildlife accidents
 Provided insights for better conservation planning
+
+
+
 🌍 Future Scope
 Real-time IoT sensor integration
 Deployment using mobile/web applications
